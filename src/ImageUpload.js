@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Image, View } from 'react-native';
 import { ImagePicker } from 'expo';
+import imageFileSend from './helpers/imageUpload';
 
 export default class ImagePickerExample extends React.Component {
   state = {
@@ -24,12 +25,12 @@ export default class ImagePickerExample extends React.Component {
 
 
   _pickImage = async () => {
-    let result = await ImagePicker.launchCameraAsync({
-      allowsEditing: true,
+    let result = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: false,
       aspect: [4, 3],
     });
 
-    console.log(result);
+    imageFileSend(result.uri);
 
     if (!result.cancelled) {
       this.setState({ image: result.uri });

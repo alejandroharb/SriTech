@@ -6,9 +6,10 @@
   "private": true,
   "main": "main.js",
   "dependencies": {
+    "axios": "^0.16.2",
     "expo": "17.0.0",
     "react": "16.0.0-alpha.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-17.0.0.tar.gz",
-    "watson-developer-cloud": "^2.32.1"
+    "react-native-fs": "^2.3.3"
   }
 }
